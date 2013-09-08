@@ -6,8 +6,7 @@ public class PacienteDeClinica extends Pessoa {
 
 	private String planoDeSaude;
 
-	public PacienteDeClinica(String nNome, String nIdentidade, Date nNascimento, String nPlanoDeSaude)
-	{
+	public PacienteDeClinica(String nNome, String nIdentidade, Date nNascimento, String nPlanoDeSaude) {
 		super(nNome, nIdentidade, nNascimento);
 		this.planoDeSaude = nPlanoDeSaude;
 	}
@@ -16,14 +15,12 @@ public class PacienteDeClinica extends Pessoa {
 		return planoDeSaude;
 	}
 
-	public void setPlanoDeSaude(String planoDeSaude)
-	{
+	public void setPlanoDeSaude(String planoDeSaude) {
 		this.planoDeSaude = planoDeSaude;
 	}
 
 	@Override
-	public String toString()
-	{
-		return null ;
+	public String toString() {
+		return null;
 	}
 }

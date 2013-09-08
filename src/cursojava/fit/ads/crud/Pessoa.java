@@ -15,7 +15,7 @@ public class Pessoa {
 	
 	@Override
 	public String toString(){
-		return null;
+		return this.nome + " - " + this.identidade + " - " + this.nascimento;
 	}
 	
 	public String getNome() {
