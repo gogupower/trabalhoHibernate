@@ -18,7 +18,7 @@ public class HibernateUtil
 		}
 		catch(Throwable e)
 		{
-			System.out.println("Criação inicial do objeto SessionFactory falhou. Erro" +  e);
+			System.out.println("Criação inicial do objeto SessionFactory falhou. Erro: " +  e);
 			throw new ExceptionInInitializerError(e);			
 		}
 	}

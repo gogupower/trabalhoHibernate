@@ -43,6 +43,12 @@ public class Funcionario extends Pessoa
 	{
 		return super.toString() + String.format( ", Admitido em: %s, Salario Atual: %s", this.admissao, this.salario );
 	}
+	
+	//---- @thiagosoares: Adicionei o método pq pedia no exercício, mas acho que o getSalario é que deveria ser usado. ---//
+	public Double qualSalario()
+	{
+		return this.salario;
+	}
 
 }
 

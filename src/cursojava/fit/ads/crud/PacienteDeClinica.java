@@ -31,6 +31,5 @@ public class PacienteDeClinica extends Pessoa {
 	{
 		return super.toString() + String.format( ", Plano De Saude: %s", this.planoDeSaude );
 	}
-	
 
 }
