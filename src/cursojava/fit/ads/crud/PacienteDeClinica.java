@@ -11,16 +11,16 @@ public class PacienteDeClinica extends Pessoa {
 		this.planoDeSaude = nPlanoDeSaude;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + " - " + this.getPlanodeSaude();
+	}
+
 	public String getPlanodeSaude() {
 		return planoDeSaude;
 	}
 
 	public void setPlanoDeSaude(String planoDeSaude) {
 		this.planoDeSaude = planoDeSaude;
-	}
-
-	@Override
-	public String toString() {
-		return null;
 	}
 }

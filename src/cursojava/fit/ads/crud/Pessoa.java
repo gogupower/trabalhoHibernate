@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Pessoa {
 	private String nome;
-	private String identidade;
 	private Date nascimento;
+	private String identidade;
 	
 	public Pessoa(String novoNome, String novaIdentidade, Date novoNascimento){
 		this.setNome(novoNome);
@@ -15,27 +15,25 @@ public class Pessoa {
 	
 	@Override
 	public String toString(){
-		return this.nome + " - " + this.identidade + " - " + this.nascimento;
+		return "Nome: " + this.getNome() + " - " + this.getNascimento() + " - " + this.getIdentidade() ;
 	}
 	
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	public String getIdentidade() {
-		return identidade;
+		return this.identidade;
 	}
 	public void setIdentidade(String identidade) {
 		this.identidade = identidade;
 	}
 	public Date getNascimento() {
-		return nascimento;
+		return this.nascimento;
 	}
 	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
-	}
-	
-	
+	}	
 }
