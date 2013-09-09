@@ -2,36 +2,59 @@ package cursojava.fit.ads.crud;
 
 import java.util.Date;
 
-public class Funcionario extends Pessoa {
+public class Funcionario extends Pessoa 
+{
+	
+	//----Propriedades----//
 
 	private String departamento;
-	private double salario;
-
-	public Funcionario(String novoNome, String novaIdentidade, Date novoNascimento, String novoDepartamento, double novoSalario) {
-		super(novoNome, novaIdentidade, novoNascimento);
-
-		this.setDepartamento(novoDepartamento);
-		this.setSalario(novoSalario);
-	}
-
-	@Override
-	public String toString() {
-		return super.toString() + " - "   + this.getDepartamento()  +  " - "   + this.getSalario();
-	}
-	
 	public String getDepartamento() {
 		return this.departamento;
 	}
-
-	public void setDepartamento(String departamento) {
+	public void setDepartamento(String departamento) 
+	{
 		this.departamento = departamento;
 	}
-
-	public double getSalario() {
-		return this.salario;
+	
+	private Date admissao; 	
+	public Date getAdmissao() 
+	{
+		return admissao;
+	}	
+	public void setAdmissao(Date admissao) 
+	{
+		this.admissao = admissao;
 	}
-
-	public void setSalario(double salario) {
+	
+	private Double salario;
+	public Double getSalario() 
+	{
+		return salario;
+	}	
+	public void setSalario(double salario) 
+	{
 		this.salario = salario;
 	}
+
+	//----Construtores----//
+	public Funcionario(String novoNome, String novaIdentidade, Date novoNascimento, Date novoAdmissao, Double novoSalario) 
+	{
+		super(novoNome, novaIdentidade, novoNascimento);
+		this.admissao = novoAdmissao;
+		this.salario = novoSalario;
+	}
+	public Funcionario()
+	{
+	}
+	
+	//----Métodos----//	
+	@Override
+	public String toString()
+	{
+		return super.toString() + String.format( ", admitido: %s, salario: %s", this.admissao, this.salario );
+	}
+
 }
+
+
+
