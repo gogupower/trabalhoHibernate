@@ -6,16 +6,6 @@ public class Funcionario extends Pessoa
 {
 	
 	//----Propriedades----//
-
-	private String departamento;
-	public String getDepartamento() {
-		return this.departamento;
-	}
-	public void setDepartamento(String departamento) 
-	{
-		this.departamento = departamento;
-	}
-	
 	private Date admissao; 	
 	public Date getAdmissao() 
 	{
@@ -40,8 +30,8 @@ public class Funcionario extends Pessoa
 	public Funcionario(String novoNome, String novaIdentidade, Date novoNascimento, Date novoAdmissao, Double novoSalario) 
 	{
 		super(novoNome, novaIdentidade, novoNascimento);
-		this.admissao = novoAdmissao;
-		this.salario = novoSalario;
+		this.setAdmissao(novoAdmissao);
+		this.setSalario(novoSalario);
 	}
 	public Funcionario()
 	{
@@ -51,7 +41,7 @@ public class Funcionario extends Pessoa
 	@Override
 	public String toString()
 	{
-		return super.toString() + String.format( ", admitido: %s, salario: %s", this.admissao, this.salario );
+		return super.toString() + String.format( ", Admitido em: %s, Salario Atual: %s", this.admissao, this.salario );
 	}
 
 }

@@ -19,7 +19,7 @@ public class PacienteDeClinica extends Pessoa {
 	public PacienteDeClinica(String nNome, String nIdentidade, Date nNascimento, String nPlanoDeSaude) 
 	{
 		super(nNome, nIdentidade, nNascimento);
-		this.planoDeSaude = nPlanoDeSaude;
+		this.setPlanoDeSaude(nPlanoDeSaude);
 	}
 	public PacienteDeClinica() 
 	{		
@@ -29,7 +29,7 @@ public class PacienteDeClinica extends Pessoa {
 	@Override
 	public String toString()
 	{
-		return super.toString() + String.format( ", planoDeSaude: %s", this.planoDeSaude );
+		return super.toString() + String.format( ", Plano De Saude: %s", this.planoDeSaude );
 	}
 	
 

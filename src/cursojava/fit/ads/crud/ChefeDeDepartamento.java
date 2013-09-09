@@ -29,8 +29,8 @@ public class ChefeDeDepartamento extends Funcionario{
 	public ChefeDeDepartamento(String novoNome, String novaIdentidade, Date novoNascimento, Date novoAdmissao, Double novoSalario, String novoDepartamento, Date novoPromocaoAChefe) 
 	{
 		super(novoNome, novaIdentidade, novoNascimento, novoAdmissao, novoSalario);
-		this.departamento = novoDepartamento;
-		this.promocaoAChefe = novoPromocaoAChefe;
+		this.setDepartamento(novoDepartamento);
+		this.setPromocaoAChefe(novoPromocaoAChefe);
 	}
 	public ChefeDeDepartamento() 
 	{
@@ -40,7 +40,7 @@ public class ChefeDeDepartamento extends Funcionario{
 	@Override
 	public String toString()
 	{
-		return super.toString() + String.format( ", departamento: %s, promovido: %s", this.departamento, this.promocaoAChefe );
+		return super.toString() + String.format( ", Departamento: %s, Promovido em: %s", this.departamento, this.promocaoAChefe );
 	}
 	
 	

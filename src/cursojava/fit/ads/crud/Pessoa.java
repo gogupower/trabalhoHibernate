@@ -54,7 +54,7 @@ public class Pessoa
 	@Override
 	public String toString()
 	{
-		return String.format("indentidade: %s, nome: %s, aniversário: %s", this.identidade, this.nome, this.nascimento );
+		return String.format("Identidade: %s, Nome: %s, Data de Nascimento: %s", this.identidade, this.nome, this.nascimento );
 	}
 	
 }
