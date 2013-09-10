@@ -2,59 +2,55 @@ package cursojava.fit.ads.crud;
 
 import java.util.Date;
 
-public class Funcionario extends Pessoa {
-
-	public Funcionario(String novoNome, String novaIdentidade, Date novoNascimento) {
-		super(novoNome, novaIdentidade, novoNascimento);
-		this.setNome(novoNome);
-		this.setDpt(dpt);
-		this.setSalario(salario);
-		this.identificador = proximo++;
-
+public class Funcionario extends Pessoa 
+{
+	
+	//----Propriedades----//
+	private Date admissao; 	
+	public Date getAdmissao() 
+	{
+		return admissao;
+	}	
+	public void setAdmissao(Date admissao) 
+	{
+		this.admissao = admissao;
 	}
-
-	private int identificador;
-	private static int proximo = 1;
-	private String cpf;
-	private String nome;
-	private String dpt;
-	private double salario;
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public int getIdentificador() {
-		return identificador;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String n) {
-		this.nome = n;
-
-	}
-
-	public String getDpt() {
-		return dpt;
-	}
-
-	public void setDpt(String dpt) {
-		this.dpt = dpt;
-	}
-
-	public double getSalario() {
+	
+	private Double salario;
+	public Double getSalario() 
+	{
 		return salario;
-	}
-
-	public void setSalario(double salario) {
+	}	
+	public void setSalario(double salario) 
+	{
 		this.salario = salario;
 	}
 
+	//----Construtores----//
+	public Funcionario(String novoNome, String novaIdentidade, Date novoNascimento, Date novoAdmissao, Double novoSalario) 
+	{
+		super(novoNome, novaIdentidade, novoNascimento);
+		this.setAdmissao(novoAdmissao);
+		this.setSalario(novoSalario);
+	}
+	public Funcionario()
+	{
+	}
+	
+	//----Métodos----//	
+	@Override
+	public String toString()
+	{
+		return super.toString() + String.format( ", Admitido em: %s, Salario Atual: %s", this.admissao, this.salario );
+	}
+	
+	//---- @thiagosoares: Adicionei o método pq pedia no exercício, mas acho que o getSalario é que deveria ser usado. ---//
+	public Double qualSalario()
+	{
+		return this.salario;
+	}
+
 }
+
+
+
