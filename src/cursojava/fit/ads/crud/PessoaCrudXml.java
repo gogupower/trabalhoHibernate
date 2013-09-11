@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 import cursojava.fit.ads.conexao.HibernateUtil;
 
 
-public class PessoaCrudXml {
+public class PessoaCrudXML implements IPessoa{
 
 	public void salvar(Pessoa pessoa)
 	{
@@ -94,38 +94,31 @@ public class PessoaCrudXml {
 			}
 		}
 	}
-	public List<Pessoa> listar()
-	{
+	
+	public List<Pessoa> listar() {
 		Session sessao = null;
 		Transaction transacao = null;
 		Query consulta = null;
 		List<Pessoa> resultado = null;
-		try
-		{
+		
+		try {
+
 			sessao = HibernateUtil.getSessionFactory().openSession();
 			transacao = sessao.beginTransaction();
 			consulta = sessao.createQuery("from Pessoa");
 			resultado = consulta.list();
 			transacao.commit();
-			
-			return resultado;
-		}
-		catch(HibernateException e)
-		{
+
+		} catch(HibernateException e) {
 			System.out.println("Não foi possível selecionar pessoas.Erro: " +e.getMessage());
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				sessao.close();
-			}
-			catch(Throwable e)
-			{
-				System.out.println("Erro ao fechar operação de consulta. Erro:" +e.getMessage());
+			} catch(Throwable e) {
+				System.out.println("Erro ao fechar operação de consulta. Erro: " +e.getMessage());
 			}
 		}
-		return null;
+
+		return resultado;
 	}
 }
-	

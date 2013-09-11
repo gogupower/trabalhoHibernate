@@ -9,8 +9,8 @@
 		</id>
 		<property name="nome" />
 		<property name="identidade" />
-		<property name="dataNasc" />
-		<property name="dataAdmissao" />
+		<property name="nascimento" type="date" column="dtNasc" />
+		<property name="dataAdmissao" type="date" column="dtAdmissao" />
 		<property name="salario" />
 	</class>
 

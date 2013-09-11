@@ -9,8 +9,8 @@
 		</id>
 		<property name="nome" />
 		<property name="identidade" />
-		<property name="dataNasc" />
-		<property name="planoDeSaude" />
+		<property name="nascimento" type="date" column="dt_nasc" />
+		<property name="planoDeSaude" type="String" column="planoDeSaude" />
 	</class>
 
 </hibernate-mapping>
