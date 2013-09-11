@@ -2,15 +2,12 @@ package cursojava.fit.ads.crud;
 
 import java.util.Date;
 
-public class Pessoa 
-{
+public class Pessoa{
 
 	//----Propriedades----//	
 	private String nome;	
-	public String getNome() 
-	{
-		return nome;
-
+	public String getNome(){
+		return this.nome;
 	}
 	public void setNome(String nome) 
 	{
@@ -18,36 +15,31 @@ public class Pessoa
 	}	
 	
 	private String identidade;
-	public String getIdentidade() 
-	{
-		return identidade;
+	public String getIdentidade(){
+		return this.identidade;
 
 	}
-	public void setIdentidade(String identidade) 
-	{
+	public void setIdentidade(String identidade){
 		this.identidade = identidade;
 	}
 	
 	private Date nascimento;
-	public Date getNascimento() 
-	{
-		return nascimento;
+	public Date getNascimento(){
+		return this.nascimento;
 
 	}
-	public void setNascimento(Date nascimento) 
-	{
+	public void setNascimento(Date nascimento){
 		this.nascimento = nascimento;
 	}	
 		
 	//----Construtores----//
-	public Pessoa(String novoNome, String novaIdentidade, Date novoNascimento)
-	{
+	public Pessoa(String novoNome, String novaIdentidade, Date novoNascimento){
 		this.setNome(novoNome);
 		this.setIdentidade(novaIdentidade);
 		this.setNascimento(novoNascimento);
 	}
-	public Pessoa()
-	{
+
+	public Pessoa(){
 	}
 	
 	//----Métodos----//
@@ -56,6 +48,4 @@ public class Pessoa
 	{
 		return String.format("Identidade: %s, Nome: %s, Data de Nascimento: %s", this.identidade, this.nome, this.nascimento );
 	}
-	
 }
-
