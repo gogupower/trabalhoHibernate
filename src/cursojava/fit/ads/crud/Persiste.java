@@ -9,18 +9,35 @@ import org.hibernate.Transaction;
 import cursojava.fit.ads.conexao.HibernateUtil;
 
 
-public class PessoaCrudXML implements IPessoa{
+public class Persiste implements IPersiste {
 
 	public void salvar(Pessoa pessoa)
 	{
 		Session sessao = null;
 		Transaction transacao = null;
+
 		try
 		{
 			sessao = HibernateUtil.getSessionFactory().openSession();
 			transacao = sessao.beginTransaction();
-			sessao.save(pessoa);
-			transacao.commit();
+			if (pessoa instanceof Funcionario)
+			{
+				sessao.save((Funcionario)pessoa);
+			}
+			else if (pessoa instanceof PacienteDeClinica)
+			{
+				sessao.save((PacienteDeClinica)pessoa);
+			}
+			else if (pessoa instanceof ChefeDeDepartamento)
+			{
+				sessao.save((ChefeDeDepartamento) pessoa);
+			}
+			else
+			{
+				System.out.println("O objeto informado não é de um tipo persistível!");
+				return;
+			}
+			transacao.commit();	
 		}
 		catch(HibernateException e)
 		{
@@ -47,7 +64,23 @@ public class PessoaCrudXML implements IPessoa{
 		{
 			sessao = HibernateUtil.getSessionFactory().openSession();
 			transacao = sessao.beginTransaction();
-			sessao.update(pessoa);
+			if (pessoa instanceof Funcionario)
+			{
+				sessao.update((Funcionario)pessoa);
+			}
+			else if (pessoa instanceof PacienteDeClinica)
+			{
+				sessao.update((PacienteDeClinica)pessoa);
+			}
+			else if (pessoa instanceof ChefeDeDepartamento)
+			{
+				sessao.update((ChefeDeDepartamento) pessoa);
+			}
+			else
+			{
+				System.out.println("O objeto informado não é de um tipo persistível!");
+				return;
+			}
 			transacao.commit();
 		}
 		catch(HibernateException e)
@@ -75,7 +108,23 @@ public class PessoaCrudXML implements IPessoa{
 		{
 			sessao = HibernateUtil.getSessionFactory().openSession();
 			transacao = sessao.beginTransaction();
-			sessao.delete(pessoa);
+			if (pessoa instanceof Funcionario)
+			{
+				sessao.delete((Funcionario)pessoa);
+			}
+			else if (pessoa instanceof PacienteDeClinica)
+			{
+				sessao.delete((PacienteDeClinica)pessoa);
+			}
+			else if (pessoa instanceof ChefeDeDepartamento)
+			{
+				sessao.delete((ChefeDeDepartamento) pessoa);
+			}
+			else
+			{
+				System.out.println("O objeto informado não é de um tipo persistível!");
+				return;
+			}
 			transacao.commit();
 		}
 		catch(HibernateException e)
@@ -94,31 +143,53 @@ public class PessoaCrudXML implements IPessoa{
 			}
 		}
 	}
-	
-	public List<Pessoa> listar() {
+	public List<Pessoa> listar(Pessoa pessoa)
+	{
 		Session sessao = null;
 		Transaction transacao = null;
 		Query consulta = null;
 		List<Pessoa> resultado = null;
-		
-		try {
-
+		try
+		{
 			sessao = HibernateUtil.getSessionFactory().openSession();
 			transacao = sessao.beginTransaction();
-			consulta = sessao.createQuery("from Pessoa");
+			if (pessoa instanceof Funcionario)
+			{
+				consulta = sessao.createQuery("from Funcionario");
+			}
+			else if (pessoa instanceof ChefeDeDepartamento)
+			{
+				consulta = sessao.createQuery("from ChefeDeDepartamento");
+			}
+			else if (pessoa instanceof PacienteDeClinica)
+			{
+				consulta = sessao.createQuery("from PacienteDeClinica");
+			}
 			resultado = consulta.list();
 			transacao.commit();
-
-		} catch(HibernateException e) {
+		}
+		catch(HibernateException e)
+		{
 			System.out.println("Não foi possível selecionar pessoas.Erro: " +e.getMessage());
-		} finally {
-			try {
+		}
+		finally
+		{
+			try
+			{
 				sessao.close();
-			} catch(Throwable e) {
-				System.out.println("Erro ao fechar operação de consulta. Erro: " +e.getMessage());
+			}
+			catch(Throwable e)
+			{
+				System.out.println("Erro ao fechar operação de consulta. Erro:" +e.getMessage());
 			}
 		}
-
 		return resultado;
 	}
+
+	@Override
+	public Pessoa buscar(int codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
+	

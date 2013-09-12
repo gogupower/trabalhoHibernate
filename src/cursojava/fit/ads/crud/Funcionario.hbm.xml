@@ -3,15 +3,15 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="cursojava.fit.ads.crud">
-	<class name="Funcionario" table="Funcionario">
-		<id name="id" column="id">
-			<generator class="increment" />
-		</id>
-		<property name="nome" />
-		<property name="identidade" />
-		<property name="nascimento" type="date" column="dtNasc" />
-		<property name="dataAdmissao" type="date" column="dtAdmissao" />
-		<property name="salario" />
+	<class name="Funcionario" table="funcionario">
+		<id name="codigo" column="codigo">
+	    	<generator class="increment"/>
+    	</id>
+    	<property name="nome" column="nome" />
+    	<property name="identidade" column="identidade" />
+    	<property name="nascimento" column="dataNasc" />
+		<property name="admissao" column="dataAdmissao" />
+		<property name="salario" column="salario" />
 	</class>
 
 </hibernate-mapping>

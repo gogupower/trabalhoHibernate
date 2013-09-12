@@ -4,13 +4,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="cursojava.fit.ads.crud">
 	<class name="PacienteDeClinica" table="PacienteDeClinica">
-		<id name="id" column="id">
-			<generator class="increment" />
-		</id>
-		<property name="nome" />
-		<property name="identidade" />
-		<property name="nascimento" type="date" column="dt_nasc" />
-		<property name="planoDeSaude" type="String" column="planoDeSaude" />
+		<id name="codigo" column="codigo">
+	    	<generator class="increment"/>
+    	</id>
+    	<property name="nome" column="nome" />
+    	<property name="identidade" column="identidade" />
+		<property name="planoDeSaude" />
 	</class>
 
 </hibernate-mapping>

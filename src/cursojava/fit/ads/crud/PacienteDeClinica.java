@@ -3,29 +3,33 @@ package cursojava.fit.ads.crud;
 import java.util.Date;
 
 public class PacienteDeClinica extends Pessoa {
-
+	
 	//----Propriedades----//
 	private String planoDeSaude;
-
-	public String getPlanodeSaude() {
-		return this.planoDeSaude;
+	public String getPlanoDeSaude() 
+	{
+		return planoDeSaude;
 	}
-
-	public void setPlanoDeSaude(String planoDeSaude) {
+	public void setPlanoDeSaude(String planoDeSaude) 
+	{
 		this.planoDeSaude = planoDeSaude;
 	}
 
 	//----Construtores----//
-	public PacienteDeClinica() { }
-
-	public PacienteDeClinica(String novoNome, String novoIdentidade, Date novoNascimento, String novoPlanoDeSaude) {
-		super(novoNome, novoIdentidade, novoNascimento);
-		this.setPlanoDeSaude(novoPlanoDeSaude);
+	public PacienteDeClinica(String nNome, String nIdentidade, Date nNascimento, String nPlanoDeSaude) 
+	{
+		super(nNome, nIdentidade, nNascimento);
+		this.setPlanoDeSaude(nPlanoDeSaude);
 	}
-
+	public PacienteDeClinica() 
+	{		
+	}
+	
 	//----Métodos----//
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return super.toString() + String.format( ", Plano De Saude: %s", this.planoDeSaude );
 	}
+
 }
