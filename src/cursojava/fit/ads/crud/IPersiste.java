@@ -1,12 +1,14 @@
 package cursojava.fit.ads.crud;
 
+import java.util.List;
+
 public interface IPersiste 
 {
-	public void salvar(Pessoa pessoa);
+	public void salvar(Object obj);
 	
-	public void atualizar (Pessoa pessoa);
+	public void atualizar (Object obj);
 	
-	public void excluir (Pessoa pessoa);
+	public void excluir (Object obj);
 	
-	public Pessoa buscar(int codigo);
+	public <T> List<T> listar(Class<T> pessoa);
 }
