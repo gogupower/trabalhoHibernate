@@ -9,6 +9,7 @@
     	</id>
     	<property name="nome" column="nome" />
     	<property name="identidade" column="identidade" />
+    	<property name="nascimento" column="dataNasc" />
 		<property name="planoDeSaude" />
 	</class>
 

@@ -7,9 +7,9 @@
 		<!-- Configuração da conexão com o banco MySQL e dialeto -->
 		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost/trabalhoHibernate</property>
+		<property name="connection.url">jdbc:mysql://localhost/bd_hibernate</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">S0ftw1d3TE</property>
+		<property name="connection.password">admin</property>
 		<property name="current_session_context_class">thread</property>
 		
 		<!-- Usando as configurações do C3PO para pool de conexões -->

@@ -3,7 +3,7 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="cursojava.fit.ads.crud">
-	<class name="Funcionario" table="funcionario">
+	<class name="Funcionario" table="Funcionario">
 		<id name="codigo" column="codigo">
 	    	<generator class="increment"/>
     	</id>

@@ -2,69 +2,59 @@ package cursojava.fit.ads.crud;
 
 import java.util.Date;
 
-public abstract class Pessoa 
-{
+public abstract class Pessoa {
 
-	//----Propriedades----//	
+	// ----Propriedades----//
 	private int codigo;
-	public int getCodigo() 
-	{
-		return codigo;
+	private String nome;
+	private String identidade;
+	private Date nascimento;
+
+	public int getCodigo() {
+		return this.codigo;
 	}
-	public void setCodigo(int codigo) 
-	{
+
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	private String nome;	
-	public String getNome() 
-	{
-		return nome;
 
+	public String getNome() {
+		return this.nome;
 	}
-	public void setNome(String nome) 
-	{
+
+	public void setNome(String nome) {
 		this.nome = nome;
-	}	
-	
-	private String identidade;
-	public String getIdentidade() 
-	{
-		return identidade;
-
 	}
-	public void setIdentidade(String identidade) 
-	{
+
+	public String getIdentidade() {
+		return this.identidade;
+	}
+
+	public void setIdentidade(String identidade) {
 		this.identidade = identidade;
 	}
-	
-	private Date nascimento;
-	public Date getNascimento() 
-	{
-		return nascimento;
 
+	public Date getNascimento() {
+		return this.nascimento;
 	}
-	public void setNascimento(Date nascimento) 
-	{
+
+	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
-	}	
-		
-	//----Construtores----//
-	public Pessoa(String novoNome, String novaIdentidade, Date novoNascimento)
-	{
+	}
+
+	// ----Construtores----//
+	public Pessoa(String novoNome, String novaIdentidade, Date novoNascimento) {
 		this.setNome(novoNome);
 		this.setIdentidade(novaIdentidade);
 		this.setNascimento(novoNascimento);
 	}
-	public Pessoa()
-	{
-	}
-	
-	//----Métodos----//
-	@Override
-	public String toString()
-	{
-		return String.format("Identidade: %s, Nome: %s, Data de Nascimento: %s", this.identidade, this.nome, this.nascimento );
-	}
-	
-}
 
+	public Pessoa() { }
+
+	// ----MÃ©todos----//
+	@Override
+	public String toString() {
+		return String.format(
+				"Identidade: %s, Nome: %s, Data de Nascimento: %s", this.identidade, this.nome, this.nascimento);
+	}
+}
