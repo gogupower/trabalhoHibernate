@@ -13,11 +13,11 @@ public class AppStart {
 	public static void main(String[] args) {
 
 		try {
-			// Create a list of Funcionarios.
+			// Create a list of Funcionarios: codigo(autonum), nome, identidade, dataNasc, dataAdmissao, salario;			
 			List<Funcionario> listToAddFunc = new ArrayList<Funcionario>();
-			listToAddFunc.add(new Funcionario("Fulano", "10.10.10.2",DateFormater.parse("10/10/2000"), DateFormater.parse("12/12/2012"), 22.00));
-			listToAddFunc.add(new Funcionario("Ciclano", "10.10.10.3",DateFormater.parse("11/10/2000"), DateFormater.parse("12/12/2012"), 122.00));
-			listToAddFunc.add(new Funcionario("Mano", "10.10.10.4",DateFormater.parse("12/10/2000"), DateFormater.parse("12/08/2012"), 3422.20));
+			listToAddFunc.add(new Funcionario("Fulano", "10.10.10.2", DateFormater.parse("10/10/2000"), DateFormater.parse("12/12/2012"), 22.00));
+			listToAddFunc.add(new Funcionario("Ciclano", "10.10.10.3", DateFormater.parse("11/10/2000"), DateFormater.parse("12/12/2012"), 122.00));
+			listToAddFunc.add(new Funcionario("Mano", "10.10.10.4", DateFormater.parse("12/10/2000"), DateFormater.parse("12/08/2012"), 3422.20));
 
 			// Save the previous List.
 			for (Funcionario x : listToAddFunc)
@@ -42,7 +42,7 @@ public class AppStart {
 			for (Funcionario x : updatedListFunc)
 				System.out.println(x.toString());
 
-			// Create a list of ChefeDeDepartamentos.
+			// Create a list of ChefeDeDepartamento: codigo(autonum), nome, identidade, dataNasc, dataAdmissao, salario, departamento, promocaoAChefe
 			List<ChefeDeDepartamento> listToAddChefe = new ArrayList<ChefeDeDepartamento>();
 			listToAddChefe.add(new ChefeDeDepartamento("Fulano", "10.10.10.6", DateFormater.parse("10/10/2000"), DateFormater.parse("12/12/2012"), 22.00, "Departamento1", DateFormater.parse("10/12/2000")));
 			listToAddChefe.add(new ChefeDeDepartamento("Ciclano", "10.10.10.7", DateFormater.parse("11/10/2000"), DateFormater.parse("12/12/2012"), 122.00, "Departamento2", DateFormater.parse("12/12/2010")));
@@ -71,7 +71,7 @@ public class AppStart {
 			for (ChefeDeDepartamento x : updatedListChefe)
 				System.out.println(x.toString());
 
-			// Create a list of PacienteDeClinicas.
+			// Create a list of PacienteDeClinica: codigo, nome, identidade, dataNasc, planoDeSaude.
 			List<PacienteDeClinica> listToAddPaci = new ArrayList<PacienteDeClinica>();
 			listToAddPaci.add(new PacienteDeClinica("João", "10.10.10.101", DateFormater.parse("10/10/2000"), "SalvaVidas"));
 			listToAddPaci.add(new PacienteDeClinica("Maria", "10.10.10.102", DateFormater.parse("11/10/2000"), "NãoMorreNão"));

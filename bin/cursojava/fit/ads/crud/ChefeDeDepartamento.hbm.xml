@@ -10,6 +10,8 @@
     	<property name="nome" column="nome" />
     	<property name="identidade" column="identidade" />
     	<property name="nascimento" column="dataNasc" />
+		<property name="admissao" column="dataAdmissao" />
+		<property name="salario" column="salario" />
 		<property name="departamento" />
 		<property name="promocaoAChefe" />
 	</class>
